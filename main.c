@@ -47,4 +47,8 @@ void main()
     sort( insert, data, length );
     print_array( data, length );
 
+    init_sorted_array( data, data_origin, length );
+    sort( select, data, length );
+    print_array( data, length );
+
 }

@@ -1,6 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<limits.h>
 #include"sort.h"
+
+void swap
+    (
+    int *data_a,
+    int *data_b
+    )
+{
+    int tmp;
+
+    tmp = *data_a;
+    *data_a = *data_b;
+    *data_b = tmp;
+}
 
 void bubble_sort
     (
@@ -62,6 +76,35 @@ void insert_sort
         data[j] = val_element;
         }
 
+}
+
+void select_sort            /* This is common in-place version  */
+    (
+    int data[],             /* The target array to be sorted    */
+    int length              /* The length of the array          */
+    )
+{
+    int i;                  /* The outer loop index             */
+    int j;                  /* The inner loop index             */
+    int min;                /* Value of the selected min element*/
+    int idx_min;            /* Index of min element             */
+
+    /*============================================
+     Travel all the elements in array
+     ===========================================*/
+    for( i = 0; i < length; i++ )
+        {
+        min = INT_MAX;
+        for( j = i; j < length; j++ )
+            {
+            if( min > data[j] )
+                {
+                min = data[j];
+                idx_min = j;
+                }
+            }
+        swap( data + i, data + idx_min );
+        }
 }
 
 /* More reference: http://spaces.isu.edu.tw/upload/18833/3/web/sorting.htm */
