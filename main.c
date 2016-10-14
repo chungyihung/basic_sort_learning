@@ -40,6 +40,12 @@ void main()
     int length = sizeof( data ) / sizeof( data[0] );
 
     init_sorted_array( data, data_origin, length );
+    printf("===============================\n");
+    print_array( data, length );
+    printf("===============================\n");
+
+
+    init_sorted_array( data, data_origin, length );
     sort( bubble, data, length);
     print_array( data, length );
 
@@ -49,6 +55,11 @@ void main()
 
     init_sorted_array( data, data_origin, length );
     sort( select, data, length );
+    print_array( data, length );
+
+    init_sorted_array( data, data_origin, length );
+    sort( merge, data, length );
+    printf( "Sorting using merge sort method\n" );
     print_array( data, length );
 
 }
